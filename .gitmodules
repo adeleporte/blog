@@ -1,0 +1,14 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/adeleporte/adeleporte.github.io.git
+	branch = main
+[submodule "vcoffee/public"]
+	path = vcoffee/public
+	url = https://github.com/adeleporte/adeleporte.github.io.git
+	branch = main
+[submodule "vcoffee/themes/ananke"]
+	path = vcoffee/themes/ananke
+	url = https://github.com/budparr/gohugo-theme-ananke.git
+[submodule "vcoffee/hugo-clarity"]
+	path = vcoffee/hugo-clarity
+	url = https://github.com/chipzoller/hugo-clarity
