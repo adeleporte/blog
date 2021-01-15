@@ -555,8 +555,9 @@ adeleporte@adeleporte-a01 ns1 % kubectl get velocloudbps -n ns1 -o wide
 NAME        PROFILE               FQDN                  SERVICE CLASS   PRIORITY   LINK POLICY   BANDWIDTH LIMIT
 velokube1   Quick Start Profile   velokube1.vcn.cloud   realtime        high       auto          -1
 velokube2   Quick Start Profile   velokube2.vcn.cloud   realtime        high       fixed         40
-adeleporte@adeleporte-a01 ns1 % 
-```html
+adeleporte@adeleporte-a01 ns1 %
+```
+
 
 For my application velokube1.vcn.cloud, I want to have a RealTime Service Class, use all the available links, have a high QoS priority and no bandwidth limit.
 

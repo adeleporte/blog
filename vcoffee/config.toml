@@ -1,8 +1,8 @@
 # set `baseurl` to your root domain
 # if you set it to "/" share icons won't work properly on production
-baseurl = "https://adeleporte.github.io"  # Include trailing slash
-title = "Clarity"
-author = "Jane Doe"
+baseurl = "https://adeleporte.github.io/"  # Include trailing slash
+title = "vCoffee.cloud Blog"
+author = "Antoine Deleporte and Jean-Bernard Fontenette"
 copyright = "Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved."
 # canonifyurls = true
 #paginate = 10
@@ -43,10 +43,10 @@ series = "series"
     tabWidth = 2
 
 [params]
-author = "Antoine Deleporte"
-twitter = "@adeleporte_vmware"
+author = "Antoine Deleporte and Jean-Bernard Fontenette"
+#twitter = "@adeleporte_vmware"
 largeTwitterCard = false # set to true if you want to show a large twitter card image. The default is a small twitter card image
-introDescription = "Technologist, perpetual student, teacher, continual incremental improvement."
+introDescription = "Technologists, perpetual students, sometimes teachers, continual incremental improvement."
 # description = "" # set your site's description here. will be use for home page content meta tags (seo). Alternatively set this description in your homepage content file i.e content/_index.md. Whatever is set in the latter will take precedence
 
 # Google analytics Id
