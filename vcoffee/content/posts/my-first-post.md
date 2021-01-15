@@ -67,3 +67,21 @@ provider "velocloud" {
 
 And learn how to use it with https://registry.terraform.io/providers/adeleporte/velocloud/latest/docs
 
+## Code Blocks
+
+#### Code block with backticks
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Example HTML5 Document</title>
+</head>
+<body>
+  <p>Test</p>
+</body>
+<!-- this line is extraneous 2Error from server (Forbidden): deployments.apps is forbidden: User "chiptest" cannot create resource "deployments" in API group "apps" in the namespace "default" -->
+</html>
+```
+
