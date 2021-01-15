@@ -1,0 +1,8 @@
+baseURL = "https://adeleporte.github.io/"
+languageCode = "en-us"
+title = "vCoffee"
+theme = "hugo-clarity"
+
+[params]
+codeLineNumbers = true
+
