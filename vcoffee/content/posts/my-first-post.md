@@ -10,7 +10,7 @@ tags: [
 ]
 ---
 
-My Terraform provider for VeloCloud is now available on the official Terraform registry. Checkout [https://registry.terraform.io/providers/adeleporte/velocloud/latest](https://registry.terraform.io/providers/adeleporte/velocloud/latest)
+My Terraform provider for VeloCloud is now available on the official Terraform registry. Checkout [Velocloud TF provider docs](https://registry.terraform.io/providers/adeleporte/velocloud/latest)
 
 For me, it was the opportunity to learn more about:
 
@@ -65,7 +65,7 @@ provider "velocloud" {
 }
 ```
 
-And learn how to use it with https://registry.terraform.io/providers/adeleporte/velocloud/latest/docs
+And learn how to use it with [Velocloud TF provider docs](https://registry.terraform.io/providers/adeleporte/velocloud/latest)
 
 ## Code Blocks
 
