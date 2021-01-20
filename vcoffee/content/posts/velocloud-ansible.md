@@ -9,6 +9,8 @@ draft: false
 
 In this post, we’re going to cover the different steps involved to create a basic Ansible module for the Velocloud SDWAN Solution.
 
+![VCO](/vco.png)
+
 As an example, we’ll start with a quite basic module: how to configure the static routing at the Edge Level.
 
 VMware provides a very good API publicly available at http://code.vmware.com
