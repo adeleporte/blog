@@ -11,9 +11,9 @@ draft: false
 
 As Kubernetes is becoming the de-facto standard to run the new modern applications, there is a need to include the SDWAN configuration as part of the application development.
 
-Let’s imagine a dev coding a new app. As part of the application testing, it can be useful to adapt the SDWAN policy, such as bandwidth, the QoS settings, the link steering and so on. The dev could use the same YAML files and kubectl commands that he loves and just include the SDWAN parameters.
+Let’s imagine a dev coding a new app. As part of the application testing, it can be useful to adapt the SDWAN policy, such as bandwidth, the QoS settings, the link steering and so on. The dev could use the same YAML files and kubectl commands that he loves and just includes the SDWAN parameters.
 
-Obviously, the settings that the dev could use should be limited to a range that has been defined by infra admins. Some namespaces could set more bandwidth than others, for example. The link steering policy could be limited to “Internet Only” for pre-prod namespaces, as another example.
+Obviously, the settings that the dev could use should be limited to a range that has been defined by infra admins. Some namespaces could consume more bandwidth than others, for example. The link steering policy could be limited to “Internet Only” for pre-prod namespaces, as another example.
 
 In this post, I’m going to cover the creation of such integration. We’re going to create a Velocloud CRD (Custom Resource Definition), that the infra admins will be able to use to define the set of settings allowed for a dev. Then, we’ll create a Kubernetes Operator, which is going to talk with the Velocloud Orchestrator to implement the SDWAN logic. Finally, we’ll define some YAML samples to demonstrate how a dev can use such a Velocloud CRD.
 
@@ -41,7 +41,9 @@ ns2                  Active   5s
 
 For the Velocloud Orchestrator, I will use a new feature, the API tokens. Once logged as a Administrator, you can now create/revoke some API tokens, which seems to be a good idea in my own opinion.
 
-Velocloud CRD definition
+![VCO API Key](/static/vco-api-key.png)
+
+# Velocloud CRD definition
 Now, let’s start coding a very basic Velocloud CRD in a crd.yaml file:
 
 ```yaml
@@ -81,7 +83,6 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: default
-  #namespace: default
 roleRef:
     kind: Role
     name: velocloud-group-admin
@@ -95,7 +96,7 @@ customresourcedefinition.apiextensions.k8s.io/velocloudbps.vcn.cloud created
 
 Here is what we’ve done:
 
-We have a new kind of CRD, called velocloudbps + a new role, called velocloud-group-admin, which can use get, list, create…watch commands, and this role in bind to the default service account.
+We have a new kind of CRD, called velocloudbps + a new role, called velocloud-group-admin, which can use get, list, create and watch commands, and this role is binded to the default service account.
 
 By doing so, we now have some new kubectl commands:-)
 
@@ -109,7 +110,7 @@ adeleporte@adeleporte-a01 ns1 % kubectl get velo
 No resources found.
 ```
 
-Ok, not very useful at this stage, but we have our new Velocloud CRD! Let’s modify the initial crd.yaml file to include some validation. This will enable us (and the infra admins) to define which parameter can be set on this CRD. Let’s say that we want to define the Velocloud Configuration Profile that is going to be used, the FQDN of the application currently being developed by the dev, the TCP port, and the Business Policy settings (Link steering policy, QoS priority, Bandwidth Limit). We also define the column to be displayed when using commands such as “kubectl get velocloudbps -o wide”
+Ok, not very useful right now, but we have our new Velocloud CRD! Let’s modify the initial crd.yaml file to include some validation. This will enable us (and the infra admins) to define which parameter can be set on this CRD. Let’s say that we want to define the Velocloud Configuration Profile that is going to be used, the FQDN of the application currently being developed by the dev, the TCP port, and the Business Policy settings (Link steering policy, QoS priority, Bandwidth Limit). We also define the column to be displayed when using commands such as “kubectl get velocloudbps -o wide”
 
 ```yaml
 ---
@@ -212,7 +213,9 @@ additionalPrinterColumns:
 ```
 
 # Velocloud Kubernetes Operator
-Finally, we need now is an operator. Basically, we want Kubernetes to run our Velocloud operator when a CRD is created/updated/deleted. For that, we’ll create a deployment of a pod with 2 containers: the operator itself (which is going to talk to the Velocloud Orchestrator) and a kubectl proxy (to handle authentication).
+Finally, we need an operator. Basically, we want Kubernetes to run our Velocloud operator when a CRD is created/updated/deleted. For that, we’ll create a deployment of a pod with 2 containers: the operator itself (which is going to talk to the Velocloud Orchestrator) and a kubectl proxy (to handle authentication).
+
+![VKO Architecture](/static/vko-architecture.png)
 
 Let’s change again our crd.yaml file to include this deployment as part of the CRD definition:
 
@@ -257,7 +260,7 @@ adeleporte@adeleporte-a01 ns1 % kubectl apply -f crd.yaml -n ns1
 customresourcedefinition.apiextensions.k8s.io/velocloudbps.vcn.cloud created
 ```
 
-At this stage, the Velocloud Kubernetes operator logic is defined. The adeleporte/velokube container (we’ll discuss about this container right after) is responsible for watching at velocloudbps CRD changes. This container will then implement the necessary changes over the Velocloud Orchestrator. Let’s now deep in the adeleporte/velokube container:
+At this stage, the Velocloud Kubernetes operator logic is defined. The adeleporte/velokube container (we’ll discuss about this container right after) is responsible for watching at velocloudbps CRD changes. This container will then implement the necessary changes over the Velocloud Orchestrator. Let’s now go deeper into the adeleporte/velokube container:
 
 ```python
 import requests
@@ -428,9 +431,9 @@ event_loop()
 The code is written is Python. The interesting parts are:
 
 * we use a Stream Request to watch at velocloudbps events (/apis/vcn.cloud/v1/namespaces/{}/velocloudbps?watch=true)
-* this socket acts as a loop and generate a line for each event
-* when a new event arises, we decode the details (obj = json.loads(line))
-* depending of the type of changes (creation/modification/deletion) (obj[‘type’]), we use a different Python function
+* this socket acts as a loop and generates a line for each event
+* when a new event comes, we decode the details (obj = json.loads(line))
+* depending of the type of event (creation/modification/deletion) (obj[‘type’]), we use a different Python function
 * the Velocloud Business Profile is stored inside a Configuration module (the profile) and a Qos module (the business policies), so we have a implement some code to fetch these values
 * in case of creation, we copy the default QoS rule, change some parameters according to the CRD, and update the QoS module
 
@@ -565,6 +568,8 @@ For my application velokube2.vcn.cloud, I want to have a RealTime Service Class,
 
 Let’s check the Velocloud configuration:
 
+![VCO Profiles](/static/vco-profiles.png)
+
 And the operator logs
 
 ```bash
@@ -595,15 +600,21 @@ spec:
     service-group: PRIVATE_WIRED
     priority: low
     bandwidth-limit: 10
+```
+
+```bash
 
 adeleporte@adeleporte-a01 ns1 % kubectl apply -f velocloud.yaml --namespace ns1
 velocloudbp.vcn.cloud/velokube1 unchanged
 velocloudbp.vcn.cloud/velokube2 configured
 adeleporte@adeleporte-a01 ns1 %
+```
+![VCO Profiles](/static/vco-profiles2.png)
 
-Set some limits to devs
+# Set some limits to devs
 Now, let’s imagine that I want to change the bandwidth limit to 75%
 
+```yaml
 ---
 apiVersion: vcn.cloud/v1
 kind: VelocloudBP
@@ -619,7 +630,8 @@ spec:
     service-group: PRIVATE_WIRED
     priority: low
     bandwidth-limit: 75
-
+```
+```bash
 velocloudbp.vcn.cloud/velokube1 unchanged
 The VelocloudBP "velokube2" is invalid: spec.bandwidth-limit: Invalid value: 50: spec.bandwidth-limit in body should be less than or equal to 50
 adeleporte@adeleporte-a01 ns1 %
@@ -627,7 +639,7 @@ adeleporte@adeleporte-a01 ns1 %
 
 As a developer, I’m not allowed to set more than 50% of bandwidth, because this limit has been set by the infra team when defining the CRD.
 
-As a result, the infra team can define very specific limit for each namespace and developers are free to set the Velocloud configutation within these limit.
+As a result, the infra team can define very specific limits for each namespace and developers are free to set the Velocloud configutation only within these limit.
 
 # Conclusion
 I hope that this post will give you some insights about what can be achieved when integrating such great solutions together, like Velocloud and Kubernetes. The infra/network/wan teams can now work together with the dev team to align infrastructure needs and business/dev agility.
