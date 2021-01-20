@@ -2,6 +2,12 @@
 title: "How to write an Ansible module for Velocloud"
 date: 2020-02-27T17:07:15+01:00
 draft: false
+featured: true
+tags: [
+    "velocloud",
+    "ansible",
+    "code"
+]
 ---
 
 

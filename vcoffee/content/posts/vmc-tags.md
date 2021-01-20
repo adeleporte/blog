@@ -2,6 +2,14 @@
 title: "MIGRATE VMS FROM VMC TO ON-PREM WHILE KEEPING NSX SECURITY TAGS"
 date: 2020-03-02T17:07:15+01:00
 draft: false
+featured: true
+tags: [
+    "hcx",
+    "nsx",
+    "vmc",
+    "python",
+    "code"
+]
 ---
 
 

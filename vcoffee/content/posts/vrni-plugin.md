@@ -2,6 +2,13 @@
 title: "GET VRNI GRAPHS DIRECTLY FROM A KUBECTL VRNI COMMAND!"
 date: 2020-08-24T17:07:15+01:00
 draft: false
+featured: true
+tags: [
+    "velocloud",
+    "vrni",
+    "go",
+    "code"
+]
 ---
 
 
