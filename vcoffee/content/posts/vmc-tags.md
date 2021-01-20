@@ -13,8 +13,6 @@ tags: [
 ---
 
 
-### *DISCLAIMER: The views and opinions expressed on this blog are our own and may not reflect the views and opinions of our employer*
-
 ![VMC NSX tags](/vmc-tags.png)
 
 In this post, we’re going to see how to script the migration of some workloads from VMC to a datacenter on-prem, leveraging HCX for a live migration.
@@ -437,3 +435,6 @@ When the migration is finished, let’s connect on the DC NSX to check the tags
 
 ![HCX Migration](/hcx-tags-migration2.png)
 ![Tags after migration](/hcx-tags-migration3.png)
+
+
+### *DISCLAIMER: The views and opinions expressed on this blog are our own and may not reflect the views and opinions of our employer*

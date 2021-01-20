@@ -12,10 +12,6 @@ tags: [
 ---
 
 
-### *DISCLAIMER: The views and opinions expressed on this blog are our own and may not reflect the views and opinions of our employer*
-
-
-
 As Kubernetes is becoming the de-facto standard to run the new modern applications, there is a need to include the SDWAN configuration as part of the application development.
 
 Let’s imagine a dev coding a new app. As part of the application testing, it can be useful to adapt the SDWAN policy, such as bandwidth, the QoS settings, the link steering and so on. The dev could use the same YAML files and kubectl commands that he loves and just includes the SDWAN parameters.
@@ -652,4 +648,4 @@ As a result, the infra team can define very specific limits for each namespace a
 I hope that this post will give you some insights about what can be achieved when integrating such great solutions together, like Velocloud and Kubernetes. The infra/network/wan teams can now work together with the dev team to align infrastructure needs and business/dev agility.
 
 
-
+### *DISCLAIMER: The views and opinions expressed on this blog are our own and may not reflect the views and opinions of our employer*

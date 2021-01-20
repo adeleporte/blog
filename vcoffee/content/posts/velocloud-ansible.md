@@ -11,7 +11,7 @@ tags: [
 ---
 
 
-### *DISCLAIMER: The views and opinions expressed on this blog are our own and may not reflect the views and opinions of our employer*
+
 
 In this post, we’re going to cover the different steps involved to create a basic Ansible module for the Velocloud SDWAN Solution.
 
@@ -350,4 +350,4 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-
+### *DISCLAIMER: The views and opinions expressed on this blog are our own and may not reflect the views and opinions of our employer*

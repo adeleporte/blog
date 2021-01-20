@@ -12,8 +12,6 @@ tags: [
 ---
 
 
-### *DISCLAIMER: The views and opinions expressed on this blog are our own and may not reflect the views and opinions of our employer*
-
 ![kubectl vrni plugin](/vrni-plugin-cli.png)
 
 Hi, today in this blog, I’m going to explain how to develop a small kubectl plugin. As you may know, VMware has a wonderful solution to collect and analyze network flows from many different sources, including Kubernetes: vRealize Network Insight (aka vRNI). My objective is to make this rich information easily and quickly available to a kube admin, thanks to a kubectl command.
@@ -408,3 +406,5 @@ adeleporte@adeleporte-a01 adeleporte %
 
 You should now be able to plot nice graphs by calling kubectl vrni flows and adding any IP:
 ![kubectl vrni plugin](/vrni-plugin-cli.png)
+
+### *DISCLAIMER: The views and opinions expressed on this blog are our own and may not reflect the views and opinions of our employer*
