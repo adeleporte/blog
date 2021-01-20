@@ -1,6 +1,6 @@
 # set `baseurl` to your root domain
 # if you set it to "/" share icons won't work properly on production
-baseurl = "https://vcoffee.cloud/"  # Include trailing slash
+baseurl = "http://vcoffee.cloud/"  # Include trailing slash
 title = "vCoffee.cloud Blog"
 author = "Antoine Deleporte and Jean-Bernard Fontenette"
 copyright = "Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved."
