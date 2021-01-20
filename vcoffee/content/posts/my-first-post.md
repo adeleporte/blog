@@ -1,6 +1,6 @@
 ---
 title: "VeloCloud Terraform Provider published on Hashicorp registry!"
-date: 2021-01-15T15:01:14+01:00
+date: 2020-11-12T15:01:14+01:00
 draft: false
 featured: true
 tags: [

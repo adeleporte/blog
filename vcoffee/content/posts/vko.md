@@ -1,6 +1,6 @@
 ---
 title: "A VELOCLOUD KUBERNETES OPERATOR !"
-date: 2021-01-15T17:07:15+01:00
+date: 2020-07-21T17:07:15+01:00
 draft: false
 ---
 
