@@ -41,7 +41,7 @@ ns2                  Active   5s
 
 For the Velocloud Orchestrator, I will use a new feature, the API tokens. Once logged as a Administrator, you can now create/revoke some API tokens, which seems to be a good idea in my own opinion.
 
-![VCO API Key](/static/vco-api-key.png)
+![VCO API Key](vco-api-key.png)
 
 # Velocloud CRD definition
 Now, let’s start coding a very basic Velocloud CRD in a crd.yaml file:
@@ -215,7 +215,7 @@ additionalPrinterColumns:
 # Velocloud Kubernetes Operator
 Finally, we need an operator. Basically, we want Kubernetes to run our Velocloud operator when a CRD is created/updated/deleted. For that, we’ll create a deployment of a pod with 2 containers: the operator itself (which is going to talk to the Velocloud Orchestrator) and a kubectl proxy (to handle authentication).
 
-![VKO Architecture](/static/vko-architecture.png)
+![VKO Architecture](vko-architecture.png)
 
 Let’s change again our crd.yaml file to include this deployment as part of the CRD definition:
 
@@ -568,7 +568,7 @@ For my application velokube2.vcn.cloud, I want to have a RealTime Service Class,
 
 Let’s check the Velocloud configuration:
 
-![VCO Profiles](/static/vco-profiles.png)
+![VCO Profiles](vco-profiles.png)
 
 And the operator logs
 
@@ -609,7 +609,7 @@ velocloudbp.vcn.cloud/velokube1 unchanged
 velocloudbp.vcn.cloud/velokube2 configured
 adeleporte@adeleporte-a01 ns1 %
 ```
-![VCO Profiles](/static/vco-profiles2.png)
+![VCO Profiles](vco-profiles2.png)
 
 # Set some limits to devs
 Now, let’s imagine that I want to change the bandwidth limit to 75%
