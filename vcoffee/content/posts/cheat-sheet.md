@@ -21,7 +21,7 @@ Here are some steps to build a Clarity Angular App :-)
 * [Step 6: Create a small Web Server in Go](#step-6-create-a-small-web-server-in-go)
 * [Step 7: Bundle everything in a docker image](#step-7-bundle-everything-in-a-docker-image)
 
-# Step 0: Install Node.js, Angular and GoLang on Mac
+# Step 0: install Node.js, Angular and GoLang on Mac
 
 ```bash
 brew install node
@@ -31,7 +31,7 @@ npm install -g @angular/cli
 For Go, check out https://golang.org/doc/install
 
 
-# Step 1: Build a new app
+# Step 1: build a new app
 
 ```bash
 ng new my-app --routing=false --style=css && cd my-app && ng add @clr/angular
