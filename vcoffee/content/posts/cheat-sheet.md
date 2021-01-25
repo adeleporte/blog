@@ -12,14 +12,14 @@ tags: [
 
 
 Here are some steps to build a Clarity Angular App :-)
-* [Step 0: Requirements installation](#step-0:-install-node.js,-angular-and-golang-on-mac)
-* [Step 1: Build a new app](#ttep-1:-build-a-new-app)
-* [Step 2: Add component and routing](#step-2:-add-components-and-routing)
-* [Step 3: Add Clarity component to display data](#step-3:-add-clarity-component-to-display-data)
-* [Step 4: Add Services](#step-4:-add-services)
-* [Step 5: Add Clarity component to display data](#step-5:-add-clarity-component-to-display-data)
-* [Step 6: Create a small Web Server in Go](#step-6:-create-a-small-web-server-in-go)
-* [Step 7: Bundle everything in a docker image](#step-7:-bundle-everything-in-a-docker-image)
+* [Step 0: Requirements installation](#step-0-install-nodejs-angular-and-golang-on-mac)
+* [Step 1: Build a new app](#step-1-build-a-new-app)
+* [Step 2: Add component and routing](#step-2-add-components-and-routing)
+* [Step 3: Add Clarity component to display data](#step-3-add-clarity-component-to-display-data)
+* [Step 4: Add Services](#step-4-add-services)
+* [Step 5: Add Clarity component to display data](#step-5-add-clarity-component-to-display-data)
+* [Step 6: Create a small Web Server in Go](#step-6-create-a-small-web-server-in-go)
+* [Step 7: Bundle everything in a docker image](#step-7-bundle-everything-in-a-docker-image)
 
 # Step 0: Install Node.js, Angular and GoLang on Mac
 
