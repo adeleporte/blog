@@ -98,13 +98,13 @@ mv terraform-provider-ctoa ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/linux_
 To start the webserver, go to the ctoa-web folder:  
 
 ```bash
-cd ..\frontend\dist\ctoa-web\
+cd ../frontend/dist/ctoa-web
 ```
 
 And start the web server:
 
 ```bash
-.\cto-api-linux
+./cto-api-linux
 ```
 
 ![web server](/web-server.png)
