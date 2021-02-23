@@ -43,7 +43,7 @@ and
 http://127.0.0.1:6901/?password=vncpassword in a browser to get a full desktop with all requirements set (Visual Studio, GO, Terraform, Git)
 ```
 
-![docker](docker.png)
+![docker](/docker.png)
 
 ### 1. Cloning the repo: ###
 From a terminal:
@@ -107,13 +107,13 @@ And start the web server:
 .\cto-api-linux
 ```
 
-![web server](web-server.png)
+![web server](/web-server.png)
   
 Don't close the windows above.
  
 Go to your browser on 127.0.0.1 and you should see a basic webserver.
 
-![web_server_pre_apply](clarity-web-server-empty.png)
+![web_server_pre_apply](/clarity-web-server-empty.png)
 
 ### 4. Deploy and manager resources with your custom Terraform provider ###
 
@@ -158,7 +158,7 @@ terraform apply
    
 And you should see new entries added to the table on the webserver.
 
-![web_server_apply](clarity-web-server-done.png)
+![web_server_apply](/clarity-web-server-done.png)
 
 A `terraform destroy` will remove all entries from the table.
 
