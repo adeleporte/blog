@@ -37,13 +37,24 @@ Docker installed on your machine
 ```bash
 docker run -p 5901:5901 -p 6901:6901 -p 80:80 --user 0 adeleporte/terraform-hacknite:latest
 ```
-and
+and open a desktop in a browser
 
 ```bash
 http://127.0.0.1:6901/?password=vncpassword in a browser to get a full desktop with all requirements set (Visual Studio, GO, Terraform, Git)
 ```
 
 ![docker](/docker.png)
+
+or you can use the vnc client embedded in Mac
+
+- go to Finder
+- click Go, then Connect to server
+- enter vnc://127.0.0.1:5901
+- password is vncpassword
+
+![finder](/finder.png)
+![connect](/connect.png)
+![vnc](/vnc.png)
 
 ### 1. Cloning the repo: ###
 From a terminal:
