@@ -34,9 +34,14 @@ Docker installed on your machine
 
 ### 0. Start the container ###
 
-- docker run -p 5901:5901 -p 6901:6901 -p 80:80 --user 0 adeleporte/terraform-hacknite:latest
+```bash
+docker run -p 5901:5901 -p 6901:6901 -p 80:80 --user 0 adeleporte/terraform-hacknite:latest
+```
 and
-- http://127.0.0.1:6901/?password=vncpassword in a browser to get a full desktop with all requirements set (Visual Studio, GO, Terraform, Git)
+
+```bash
+http://127.0.0.1:6901/?password=vncpassword in a browser to get a full desktop with all requirements set (Visual Studio, GO, Terraform, Git)
+```
 
 ![docker](docker.png)
 
@@ -44,44 +49,63 @@ and
 From a terminal:
 
 Clone the following [repo](https://github.com/adeleporte/ctoa-hacknite.git) with the following command:  
-`git clone https://github.com/adeleporte/ctoa-hacknite.git`
+
+```bash
+git clone https://github.com/adeleporte/ctoa-hacknite.git
+```
 
 
 Navigate to the Terraform folder:  
 
-`cd ctoa-hacknite/terraform-provider-ctoa`
+```bash
+cd ctoa-hacknite/terraform-provider-ctoa
+```
 
 Create a folder where the compiled provider will be moved to.
 
 - If your physical machine is a MAC:
-`mkdir -p ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/darwin_amd64`
+```bash
+mkdir -p ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/darwin_amd64
+```
 
 - If your physical machine is a Linux:
-`mkdir -p ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/linux_amd64`
+```bash
+mkdir -p ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/linux_amd64
+```
 
 ### 2. Compiling the provider and moving to the correct folder: ###
 
 Compile the provider:  
 
-`go build -o terraform-provider-ctoa`
+```bash
+go build -o terraform-provider-ctoa
+```
 
 Move the provider to the correct location:  
 
 - If your physical machine is a MAC:
-`mv terraform-provider-ctoa ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/darwin_amd64/terraform-provider-ctoa`
+```bash
+mv terraform-provider-ctoa ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/darwin_amd64/terraform-provider-ctoa
+```
 
 - If your physical machine is a Linux:
-`mv terraform-provider-ctoa ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/linux_amd64/terraform-provider-ctoa`
+```bash
+mv terraform-provider-ctoa ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/linux_amd64/terraform-provider-ctoa
+```
 
 ### 3. Start the webserver ###
 
 To start the webserver, go to the ctoa-web folder:  
 
-`cd ..\frontend\dist\ctoa-web\`
+```bash
+cd ..\frontend\dist\ctoa-web\
+```
 
 And start the web server:
 
-`.\cto-api-linux` 
+```bash
+.\cto-api-linux
+```
 
 ![web server](web-server.png)
   
@@ -95,10 +119,14 @@ Go to your browser on 127.0.0.1 and you should see a basic webserver.
 
 From Visual Studio Code, navigate back to the Terraform folder:  
 
-`cd ctoa-hacknite/terraform-provider-ctoa`
+```bash
+cd ctoa-hacknite/terraform-provider-ctoa`
+```
 
 Assuming you're in `terraform-provider-ctoa` and in the same folder as the `main.tf` file, the initialization should work:  
-`terraform init`
+```bash
+terraform init
+```
 
 Update the `main.tf` file with more resources. With this Terraform provider, every 'resource' you will create is a user, with a first name and a last name. For example:
 
@@ -118,11 +146,15 @@ In the `main.tf` file, we refer to the host as the webserver (`127.0.0.1` is the
  
 In your Terraform terminal, once the main.tf file is updated with the resources you are creating, do a:
  
-`terraform plan`
+```bash
+terraform plan
+```
  
 And a:
  
- `terraform apply`
+```bash
+terraform apply
+```
    
 And you should see new entries added to the table on the webserver.
 
