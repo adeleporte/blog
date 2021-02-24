@@ -90,7 +90,6 @@ go build -o terraform-provider-ctoa
 Move the provider to the correct location:  
 
 
-- If your physical machine is a Linux:
 ```bash
 mv terraform-provider-ctoa ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/linux_amd64/terraform-provider-ctoa
 ```
