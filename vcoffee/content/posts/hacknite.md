@@ -74,12 +74,7 @@ cd ctoa-hacknite/terraform-provider-ctoa
 
 Create a folder where the compiled provider will be moved to.
 
-- If your physical machine is a MAC:
-```bash
-mkdir -p ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/darwin_amd64
-```
 
-- If your physical machine is a Linux:
 ```bash
 mkdir -p ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/linux_amd64
 ```
@@ -94,10 +89,6 @@ go build -o terraform-provider-ctoa
 
 Move the provider to the correct location:  
 
-- If your physical machine is a MAC:
-```bash
-mv terraform-provider-ctoa ~/.terraform.d/plugins/vmware.com/edu/ctoa/0.1/darwin_amd64/terraform-provider-ctoa
-```
 
 - If your physical machine is a Linux:
 ```bash
