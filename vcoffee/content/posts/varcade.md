@@ -67,7 +67,7 @@ And that’s it. vArcade will generate the code. Just observe the code running.
 
 ## vArcade needs you
 
-We’d like everyone to join and contribute to the vArcade Playstore. We try to keep things readable so that everyone could contribute. vArcade Playstore is maintained on our github repository. It’s just an easy to read and update JSON file. When someone publish a scripts, they need to fill a datamodel form in order to describe the variables requested by the script. And that's it.
+We’d like everyone to join and contribute to the vArcade Playstore. We try to keep things readable so that everyone could contribute. vArcade Playstore is maintained on our github repository. It’s just an easy to read and update JSON file. When someone publishes a script, he needs to fill a datamodel form in order to describe the variables requested by the script. And that's it.
 
 Please note : Currently the project is open only to the main team. If you like to see your automation scripts in vArcade Playstore please drop us a message.
 
