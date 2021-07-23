@@ -10,7 +10,6 @@ tags: [
 ]
 ---
 
-# vArcade – An exclusive preview.
 
 Here is our new project.
 *We are still working on it and expect to release the first version early September. __Stay tuned!__*
@@ -47,24 +46,24 @@ Download and install the OVA package. It’s based on Photon OS with virtual har
 
 Once powered on, you can access the Web UI (HTTPS/443) on the VM IP. You can then login using the credentials you provided at install.
 
-![varcade-login](images/varcade-login.png "vArcade Login Page")
+![varcade-login](varcade-login.png "vArcade Login Page")
 
 ## Play
 
 ### Step 1 : In the Playstore, find an interesting automation script you’d like to run 
 The user is presented a list of scripts that are available to run from the interface.
 
-![varcade-playstore](images/varcade-playstore.png "vArcade Playstore Page")
+![varcade-playstore](varcade-playstore.png "vArcade Playstore Page")
 
 ### Step 2 : Fill the required input variables
 Then user is prompted to fill the list of necessary variables (example : NSX Manager IP, login and password). The Graphical interface will adapt to the requested script, building the web UI on the fly. 
 
-![varcade-variables](images/varcade-variables.png "vArcade variables Page")
+![varcade-variables](varcade-variables.png "vArcade variables Page")
 
 ### Step 3 : review the generated code and hit the actions buttons to run it !
 And that’s it. vArcade will generate the code. Just observe the code running. 
 
-![varcade-playstore](images/varcade-run.png "vArcade run Page")
+![varcade-playstore](varcade-run.png "vArcade run Page")
 
 ## vArcade needs you
 
@@ -76,4 +75,4 @@ Please note : Currently the project is open only to the main team. If you like t
 
 We learn a lot creating this new projet and we can't wait to share more with you. Other posts are coming. 
 
-And yes, vArcade runs in Dark Mode. :smile:
+And yes, vArcade runs in Dark Mode ;-)
