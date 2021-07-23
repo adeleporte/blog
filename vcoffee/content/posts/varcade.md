@@ -1,3 +1,15 @@
+---
+title: "vArcade – An exclusive preview"
+date: 2021-07-23T17:07:15+01:00
+draft: false
+featured: true
+tags: [
+    "code",
+    "clarity",
+    "angular"
+]
+---
+
 # vArcade – An exclusive preview.
 
 Here is our new project.
