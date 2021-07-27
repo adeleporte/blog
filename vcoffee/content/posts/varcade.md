@@ -18,7 +18,7 @@ Here is our new project.
 
 What do people like in arcade gaming? Simplicity. Choose your game, insert a coin, play. There are only 3 simple steps with no complex setup, no specific prerequisites, nothing to install on your computer.
 
-What if you could consume infrastructure automation as simple as that? With vArcade, we’ve got you covered.
+What if you could consume infrastructure automation as simple as that? With "Scripts Arcade", we’ve got you covered.
 > We want to make automation easy. We want to make automation fun.
 
 Traditionally, when you want to start with automation there is a lot to learn and a slow learning curve. Of course, a ton of great VMware automation content is available on the web, from bloggers that are truly inspirational for us, to the VMware Code sample exchange. But they are difficult to consume for newbees, all using different tooling or scripting languages.
@@ -46,7 +46,7 @@ Download and install the OVA package. It’s based on Photon OS with virtual har
 
 Once powered on, you can access the Web UI (HTTPS/443) on the VM IP. You can then login using the credentials you provided at install.
 
-![varcade-login](/varcade-login.png "vArcade Login Page")
+![varcade-login](/varcade-login.png "Scripts Arcade Login Page")
 
 ## Play
 
